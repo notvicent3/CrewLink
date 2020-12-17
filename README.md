@@ -5,19 +5,36 @@
    - The offsets for the itch.io versions have not yet been documented?
 - Uses [my fork of `memoryjs`](https://github.com/zbanks/memoryjs) which implements _just enough_ of the API for CrewLink.
     - Can't detect if the process quits. If Among Us restarts, restart CrewLink.
+- Doesn't launch Among Us, so there's no parent process relationship; `ptrace` security gets in the way
 
-## Build/usage
+## Running
+```sh
+wget "https://github.com/zbanks/CrewLink/releases/download/v1.1.6-linux/CrewLink-1.1.6.AppImage"
+chmod +x CrewLink-1.1.6.AppImage
 
-```
-    git clone https://github.com/zbanks/CrewLink
-    cd CrewLink
-    yarn install 
-    cp -r iohook/electron-v80-linux-x64 node_modules/iohook/builds
-
-    # Launch CrewLink (Among Us should be already running)
-    yarn dev
+echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope
+./CrewLink-1.1.6.AppImage
 ```
 
+### Notes
+
+Tested/developed on Ubuntu 16.04.6 LTS
+
+
+## Building from source
+
+```
+git clone https://github.com/zbanks/CrewLink
+cd CrewLink
+yarn install 
+cp -r iohook/electron-v80-linux-x64 node_modules/iohook/builds
+
+# Disable ptrace scope security, so we can read the process memory
+echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope
+
+# Launch CrewLink (Among Us should be already running)
+yarn dev
+```
 ----
 
 <br />
