@@ -1,5 +1,5 @@
 import { app, dialog, ipcMain } from 'electron';
-import path, { resolve } from 'path';
+import path from 'path';
 import yml from 'js-yaml';
 // import * as Struct from 'structron';
 import { HKEY, enumerateValues } from 'registry-js';
@@ -12,7 +12,6 @@ import axios, { AxiosError } from 'axios';
 import { createCheckers } from 'ts-interface-checker';
 
 import TI from './hook-ti';
-import { existsSync, readFileSync } from 'fs';
 import { IOffsets } from './IOffsets';
 const { IOffsets } = createCheckers(TI);
 
