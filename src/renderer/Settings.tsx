@@ -19,6 +19,7 @@ const validateURL = new Ajv({
 
 const store = new Store<ISettings>({
 	migrations: {
+        /* XXX: These are throwing an exception for me? They aren't required so...
 		'1.1.3': store => {
 			const serverIP = store.get('serverIP');
 			if (typeof serverIP === 'string') {
@@ -47,6 +48,7 @@ const store = new Store<ISettings>({
 			// @ts-ignore
 			store.delete('stereoInLobby');
 		}
+        */
 	},
 	schema: {
 		alwaysOnTop: {

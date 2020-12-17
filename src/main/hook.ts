@@ -31,6 +31,8 @@ const store = new Store<ISettings>();
 
 async function loadOffsets(event: Electron.IpcMainEvent): Promise<IOffsets | undefined> {
 
+    let version = "2020.12.9";
+    /*
 	const valuesFile = resolve((process.env.LOCALAPPDATA || '') + 'Low', 'Innersloth/Among Us/Unity/6b8b0d91-4a20-4a00-a3e4-4da4a883a5f0/Analytics/values');
 	let version = '';
 	if (existsSync(valuesFile)) {
@@ -46,6 +48,7 @@ async function loadOffsets(event: Electron.IpcMainEvent): Promise<IOffsets | und
 		event.reply('error', 'Couldn\'t determine the Among Us version - Unity analytics file doesn\'t exist. Try opening Among Us and then restarting CrewLink.');
 		return;
 	}
+     */
 
 	let data: string;
 	const offsetStore = store.get('offsets') || {};
@@ -160,6 +163,8 @@ const keycodeMap = {
 type K = keyof typeof keycodeMap;
 
 function keyCodeMatches(key: K, ev: IOHookEvent): boolean {
+    if (!key) 
+        return false;
 	if (keycodeMap[key])
 		return keycodeMap[key] === ev.keycode;
 	else if (key.length === 1)

@@ -1,3 +1,27 @@
+# CrewLink for Linux
+
+- Requires running Among Us via Steam, version `2020.12.9`.
+    - Other Steam versions could work, but version detection is not implemented. See `src/main/hook.ts`
+   - The offsets for the itch.io versions have not yet been documented?
+- Uses [my fork of `memoryjs`](https://github.com/zbanks/memoryjs) which implements _just enough_ of the API for CrewLink.
+    - Can't detect if the process quits. If Among Us restarts, restart CrewLink.
+
+## Build/usage
+
+```
+    git clone https://github.com/zbanks/CrewLink
+    cd CrewLink
+    yarn install 
+    cp -r iohook/electron-v80-linux-x64 node_modules/iohook/builds
+
+    # Launch CrewLink (Among Us should be already running)
+    yarn dev
+```
+
+----
+
+<br />
+
 [![GPL-3.0 License][license-shield]][license-url] [![Appveyor Build][appveyor-shield]][appveyor-url]
 
 <br />
