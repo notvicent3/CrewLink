@@ -1,34 +1,87 @@
-import React from "react";
-import { ImpulseSpinner as Spinner } from "react-spinners-kit";
+import React from 'react';
 import { ipcRenderer } from 'electron';
-import './css/menu.css';
-import Footer from "./Footer";
+import Footer from './Footer';
+import { IpcMessages } from '../common/ipc-messages';
+import makeStyles from '@material-ui/core/styles/makeStyles';
+import CircularProgress from '@material-ui/core/CircularProgress';
+import Typography from '@material-ui/core/Typography';
+import SupportLink from './SupportLink';
 
-export default function Menu({ errored }: { errored: boolean }) {
+const useStyles = makeStyles((theme) => ({
+	root: {
+		width: '100vw',
+		height: '100vh',
+		paddingTop: theme.spacing(3),
+	},
+	error: {
+		paddingTop: theme.spacing(4),
+	},
+	menu: {
+		display: 'flex',
+		flexDirection: 'column',
+		alignItems: 'center',
+		justifyContent: 'start',
+	},
+	waiting: {
+		fontSize: 20,
+		marginTop: 12,
+		marginBottom: 12,
+	},
+	button: {
+		color: 'white',
+		background: 'none',
+		padding: '2px 10px',
+		borderRadius: 10,
+		border: '4px solid white',
+		fontSize: 24,
+		outline: 'none',
+		fontWeight: 500,
+		fontFamily: '"Varela", sans-serif',
+		marginTop: 24,
+		'&:hover': {
+			borderColor: '#00ff00',
+			cursor: 'pointer',
+		},
+	},
+}));
+
+export interface MenuProps {
+	error: string;
+}
+
+const Menu: React.FC<MenuProps> = function ({ error }: MenuProps) {
+	const classes = useStyles();
 	return (
-		<div className="root">
-			<div className="menu">
-				{errored ?
+		<div className={classes.root}>
+			<div className={classes.menu}>
+				{error ? (
+					<div className={classes.error}>
+						<Typography align="center" variant="h6" color="error">
+							ERROR
+						</Typography>
+						<Typography align="center" style={{ whiteSpace: 'pre-wrap' }}>
+							{error}
+						</Typography>
+						<SupportLink />
+					</div>
+				) : (
 					<>
-						<span className="waiting">Error</span>
-						<span className="errormessage">
-							Make sure that the Voice Server is correct in the settings and you are using the latest version of Among Us. If there was a recent update, CrewLink might not work for a few days.
-						</span>
-						<button className="button" onClick={() => {
-							ipcRenderer.send('relaunch');
-						}}>Relaunch App</button>
+						<span className={classes.waiting}>Waiting for Among Us</span>
+						<CircularProgress color="primary" size={40} />
+						<button
+							className={classes.button}
+							onClick={() => {
+								ipcRenderer.send(IpcMessages.OPEN_AMONG_US_GAME);
+							}}
+						>
+							Open Game
+						</button>
 					</>
-					:
-					<>
-						<span className="waiting">Waiting for Among Us</span>
-						<Spinner frontColor="#9b59b6" backColor="#2C2F33" size={80} loading />
-						<button className="button" onClick={() => {
-							ipcRenderer.send('openGame');
-						}}>Open Game</button>
-					</>
-				}
+				)}
 				<Footer />
 			</div>
 		</div>
 	);
-}
+};
+
+export default Menu;
