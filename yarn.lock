@@ -6290,10 +6290,10 @@ invert-kv@^2.0.0:
   resolved "https://registry.yarnpkg.com/invert-kv/-/invert-kv-2.0.0.tgz#7393f5afa59ec9ff5f67a27620d11c226e3eec02"
   integrity sha512-wPVv/y/QQ/Uiirj/vh3oP+1Ww+AWehmi1g5fFWGPF6IpCBCDVrhgHRMvrLfdYcwDh3QJbGXDW4JAuzxElLSqKA==
 
-iohook@^0.7.1:
-  version "0.7.1"
-  resolved "https://registry.yarnpkg.com/iohook/-/iohook-0.7.1.tgz#578def071856e4abc8d6d68abfe1976a44da0546"
-  integrity sha512-p9Mxsm2ai852/YRCJ3UlZBSHpQ6veaKHrdhPOMyTvtYlDZBAx+5x8YzlKuHQEUSNd4+Ez5rpRHBp/0PInmLX6g==
+iohook@^0.7.2:
+  version "0.7.2"
+  resolved "https://registry.yarnpkg.com/iohook/-/iohook-0.7.2.tgz#e4f4db4a096b33d8975b248adc84de3402b52c1f"
+  integrity sha512-PObMWA3Cx+y1s6Xu6EssuzzfW4bP2HgPsss73ELOSLCH1HEW1RnY/pkrqqVwZIu17uKKqtA6IACBtiTHFT/xXw==
   dependencies:
     bindings "^1.3.0"
     node-abi "^2.4.0"
@@ -7254,9 +7254,9 @@ memory-fs@^0.5.0:
     errno "^0.1.3"
     readable-stream "^2.0.1"
 
-"memoryjs@git://github.com/Rob--/memoryjs":
-  version "3.3.1"
-  resolved "git://github.com/Rob--/memoryjs#79618efdefc2aac203ae7137eefa2cf30cf888ce"
+"memoryjs@https://github.com/ghaith/memoryjs.git":
+  version "0.0.1"
+  resolved "https://github.com/ghaith/memoryjs.git#a2f567210c8d45e3017f3fb630d656e3d46fcca6"
   dependencies:
     bindings "^1.5.0"
     concentrate "^0.2.3"
@@ -7607,7 +7607,14 @@ no-case@^3.0.3:
     lower-case "^2.0.1"
     tslib "^1.10.0"
 
-node-abi@^2.4.0, node-abi@^2.7.0:
+node-abi@^2.4.0:
+  version "2.19.3"
+  resolved "https://registry.yarnpkg.com/node-abi/-/node-abi-2.19.3.tgz#252f5dcab12dad1b5503b2d27eddd4733930282d"
+  integrity sha512-9xZrlyfvKhWme2EXFKQhZRp1yNWT/uI1luYPr3sFl+H4keYY4xR+1jO7mvTTijIsHf1M+QDe9uWuKeEpLInIlg==
+  dependencies:
+    semver "^5.4.1"
+
+node-abi@^2.7.0:
   version "2.19.1"
   resolved "https://registry.yarnpkg.com/node-abi/-/node-abi-2.19.1.tgz#6aa32561d0a5e2fdb6810d8c25641b657a8cea85"
   integrity sha512-HbtmIuByq44yhAzK7b9j/FelKlHYISKQn0mtvcBrU5QBkhoCMp5bu8Hv5AI34DcKfOAcJBcOEMwLlwO62FFu9A==

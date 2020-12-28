@@ -24,6 +24,7 @@
     "dist": "yarn compile && electron-builder --win --x64 --ia32",
     "dist:32": "yarn compile && electron-builder --win --ia32",
     "dist:64": "yarn compile && electron-builder --win --x64",
+    "dist-linux": "yarn compile && electron-builder --linux --x64",
     "publish": "yarn compile && electron-builder --win --x64 --ia32 --publish always"
   },
   "iohook": {
@@ -31,11 +32,11 @@
       "electron-80"
     ],
     "platforms": [
+      "linux",
       "win32"
     ],
     "arches": [
-      "x64",
-      "ia32"
+      "x64"
     ]
   },
   "dependencies": {
@@ -48,8 +49,8 @@
     "electron-store": "^6.0.1",
     "electron-updater": "^4.3.5",
     "electron-window-state": "^5.0.3",
-    "iohook": "^0.7.1",
-    "memoryjs": "git://github.com/Rob--/memoryjs",
+    "iohook": "^0.7.2",
+    "memoryjs": "https://github.com/ghaith/memoryjs.git",
     "pretty-bytes": "^5.5.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
