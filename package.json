@@ -50,7 +50,7 @@
     "electron-updater": "^4.3.5",
     "electron-window-state": "^5.0.3",
     "iohook": "^0.7.2",
-    "memoryjs": "https://github.com/ghaith/memoryjs.git",
+    "memoryjs": "https://github.com/zbanks/memoryjs.git",
     "pretty-bytes": "^5.5.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
