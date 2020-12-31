@@ -27,7 +27,6 @@ Tested/developed on Ubuntu 16.04.6 LTS
 git clone https://github.com/zbanks/CrewLink
 cd CrewLink
 yarn install 
-cp -r iohook/electron-v80-linux-x64 node_modules/iohook/builds
 
 # Disable ptrace scope security, so we can read the process memory
 echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope

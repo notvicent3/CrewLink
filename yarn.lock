@@ -2794,7 +2794,7 @@ binary-extensions@^1.0.0:
   resolved "https://registry.yarnpkg.com/binary-extensions/-/binary-extensions-1.13.1.tgz#598afe54755b2868a5330d2aff9d4ebb53209b65"
   integrity sha512-Un7MIEDdUC5gNpcGDV97op1Ywk748MpHcFTHoYs6qnj1Z3j7I53VG3nwZhKzoBZmbdRNnb6WRdFlwl7tSDuZGw==
 
-bindings@^1.3.0, bindings@^1.5.0:
+bindings@^1.5.0:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/bindings/-/bindings-1.5.0.tgz#10353c9e945334bc0511a6d90b38fbc7c9c504df"
   integrity sha512-p2q/t/mhvuOj/UeLlV6566GD/guowlr0hHxClI0W9m7MWYkL1F0hLo+0Aexs9HSPCtR1SXQ0TD3MMKrXZajbiQ==
@@ -6290,17 +6290,14 @@ invert-kv@^2.0.0:
   resolved "https://registry.yarnpkg.com/invert-kv/-/invert-kv-2.0.0.tgz#7393f5afa59ec9ff5f67a27620d11c226e3eec02"
   integrity sha512-wPVv/y/QQ/Uiirj/vh3oP+1Ww+AWehmi1g5fFWGPF6IpCBCDVrhgHRMvrLfdYcwDh3QJbGXDW4JAuzxElLSqKA==
 
-iohook@^0.7.2:
-  version "0.7.2"
-  resolved "https://registry.yarnpkg.com/iohook/-/iohook-0.7.2.tgz#e4f4db4a096b33d8975b248adc84de3402b52c1f"
-  integrity sha512-PObMWA3Cx+y1s6Xu6EssuzzfW4bP2HgPsss73ELOSLCH1HEW1RnY/pkrqqVwZIu17uKKqtA6IACBtiTHFT/xXw==
+"iohook@git://github.com/zbanks/iohook.git#0.7.2_zbanks":
+  version "0.7.2-zbanks"
+  resolved "git://github.com/zbanks/iohook.git#212e261ce76b035aaaec506ec77bf8a68de0b312"
   dependencies:
-    bindings "^1.3.0"
-    node-abi "^2.4.0"
     nugget "^2.0.1"
     pump "^1.0.3"
     rc "^1.2.8"
-    tar-fs "^1.16.2"
+    tar-fs "^1.16.3"
 
 ip-regex@^2.1.0:
   version "2.1.0"
@@ -7254,9 +7251,9 @@ memory-fs@^0.5.0:
     errno "^0.1.3"
     readable-stream "^2.0.1"
 
-"memoryjs@https://github.com/ghaith/memoryjs.git":
+"memoryjs@https://github.com/zbanks/memoryjs.git":
   version "0.0.1"
-  resolved "https://github.com/ghaith/memoryjs.git#a2f567210c8d45e3017f3fb630d656e3d46fcca6"
+  resolved "https://github.com/zbanks/memoryjs.git#45975c05f0606269bd566bbf059ef14f0cec94e4"
   dependencies:
     bindings "^1.5.0"
     concentrate "^0.2.3"
@@ -7606,13 +7603,6 @@ no-case@^3.0.3:
   dependencies:
     lower-case "^2.0.1"
     tslib "^1.10.0"
-
-node-abi@^2.4.0:
-  version "2.19.3"
-  resolved "https://registry.yarnpkg.com/node-abi/-/node-abi-2.19.3.tgz#252f5dcab12dad1b5503b2d27eddd4733930282d"
-  integrity sha512-9xZrlyfvKhWme2EXFKQhZRp1yNWT/uI1luYPr3sFl+H4keYY4xR+1jO7mvTTijIsHf1M+QDe9uWuKeEpLInIlg==
-  dependencies:
-    semver "^5.4.1"
 
 node-abi@^2.7.0:
   version "2.19.1"
@@ -10069,7 +10059,7 @@ tapable@^1.0.0, tapable@^1.1.3:
   resolved "https://registry.yarnpkg.com/tapable/-/tapable-1.1.3.tgz#a1fccc06b58db61fd7a45da2da44f5f3a3e67ba2"
   integrity sha512-4WK/bYZmj8xLr+HUCODHGF1ZFzsYffasLUgEiMBY4fgtltdO6B4WJtlSbPaDTLpYTcGVwM2qLnFTICEcNxs3kA==
 
-tar-fs@^1.16.2:
+tar-fs@^1.16.3:
   version "1.16.3"
   resolved "https://registry.yarnpkg.com/tar-fs/-/tar-fs-1.16.3.tgz#966a628841da2c4010406a82167cbd5e0c72d509"
   integrity sha512-NvCeXpYx7OsmOh8zIOP/ebG55zZmxLE0etfWRbWok+q2Qo8x/vOR/IJT1taADXPe+jsiu9axDb3X4B+iIgNlKw==
