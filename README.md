@@ -6,19 +6,21 @@
 - Uses [my fork of `memoryjs`](https://github.com/zbanks/memoryjs) which implements _just enough_ of the API for CrewLink.
     - Can't detect if the process quits. If Among Us restarts, restart CrewLink.
 - Doesn't launch Among Us, so there's no parent process relationship; `ptrace` security gets in the way
+- **Please report issues [on this fork's issue tracker](https://github.com/zbanks/CrewLink/issues)**
 
 ## Running
 ```sh
-wget "https://github.com/zbanks/CrewLink/releases/download/v1.1.6-linux/CrewLink-1.1.6.AppImage"
-chmod +x CrewLink-1.1.6.AppImage
+wget "https://github.com/zbanks/CrewLink/releases/download/v1.2.1/CrewLink-1.2.1.AppImage"
+chmod +x CrewLink-1.2.1.AppImage
 
 echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope
-./CrewLink-1.1.6.AppImage
+./CrewLink-1.2.1.AppImage
 ```
 
 ### Notes
 
 Tested/developed on Ubuntu 16.04.6 LTS
+
 
 
 ## Building from source
